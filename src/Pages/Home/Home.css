@@ -1,4 +1,5 @@
-.intro, .homeContent {
+.intro,
+.homeContent {
     display: flex;
     width: 32%;
     flex-direction: column;
@@ -43,8 +44,11 @@
 .propicdiv {
     display: flex;
     flex-direction: row;
-    gap: 3vh;
+    gap: 2vh;
     margin: 7px;
+    justify-content: flex-start;
+    align-items: center;
+
 }
 
 .propicdiv span {
@@ -123,7 +127,7 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
-.works{
+.works {
     margin-top: 5vh;
     display: flex;
     justify-content: space-between;
@@ -142,35 +146,35 @@ input:checked+.slider:before {
     float: right;
 }
 
-.card{
+.card {
     border: 1px lightgray solid;
     border-radius: 10px;
     width: 60vh;
     height: fit-content;
 }
 
-.card .cardHeader span{
+.card .cardHeader span {
     font-size: medium;
     color: rgb(0 0 0 / 30%);
     font-weight: 500;
 }
 
-.card .cardHeader{
+.card .cardHeader {
     float: left;
     padding: 2vh;
     margin-left: 2vh;
 }
 
-.cardBody{
+.cardBody {
     text-align: left;
 }
 
-.invite span{
+.invite span {
     font-size: medium;
-    color: rgba(0,0,0,0.35);
+    color: rgba(0, 0, 0, 0.35);
 }
 
-.ant-divider{
+.ant-divider {
     margin: 15px auto;
 }
 
@@ -191,12 +195,12 @@ input:checked+.slider:before {
     align-items: center
 }
 
-.caldiv span p{
+.caldiv span p {
     font-size: xx-large;
     margin: 0;
 }
 
-.friendreq{
+.friendreq {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -205,9 +209,10 @@ input:checked+.slider:before {
     background: #fff;
     border-radius: 24px;
     padding-block: 2vh;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;}
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
 
-.friendreq .avatar{
+.friendreq .avatar {
     width: 40%;
     border: 2px solid blue;
     border-radius: 50%;
@@ -215,12 +220,12 @@ input:checked+.slider:before {
     margin-top: 4vh;
 }
 
-.invite{
+.invite {
     padding-left: 4vh;
     text-align: left;
 }
 
-.addfriend{
+.addfriend {
     border-radius: 20px;
     background: radial-gradient(50% 100% at 6.4% 91.7%, rgb(171, 92, 255) 0%, rgb(0, 119, 255) 100%);
     border-color: rgba(0, 0, 0, 0);
@@ -230,14 +235,14 @@ input:checked+.slider:before {
     cursor: pointer;
 }
 
-.avatargroup{
+.avatargroup {
     margin-top: 3vh;
     display: flex;
     align-items: center;
     gap: 2vh;
 }
 
-.profile{
+.profile {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -247,7 +252,7 @@ input:checked+.slider:before {
     margin: 5px;
 }
 
-.teams{
+.teams {
     display: flex;
     flex-direction: row;
     margin-top: 1vh;
@@ -256,56 +261,56 @@ input:checked+.slider:before {
     margin: 5px;
 }
 
-.teams:hover{
-    background-color: rgba(0,0,0,0.1);
+.teams:hover {
+    background-color: rgba(0, 0, 0, 0.1);
     cursor: pointer;
     border-radius: 10px;
 }
 
-.teams img{
+.teams img {
     width: 15%;
 }
 
-.teams span{
+.teams span {
     font-size: medium;
 }
 
-.teams:hover{
-    background-color: rgba(0,0,0,0.1);
+.teams:hover {
+    background-color: rgba(0, 0, 0, 0.1);
     cursor: pointer;
     border-radius: 10px;
 }
 
-.profile img{
+.profile img {
     width: 15%;
 }
 
-.profile span{
+.profile span {
     font-size: medium;
 }
 
-.profileName{
+.profileName {
     display: flex;
     flex-direction: column;
 }
 
-.profileName p{
+.profileName p {
     margin: 0;
 }
 
-.profileName span{
+.profileName span {
     font-size: medium;
     font-weight: 800;
 }
 
-.profileHead{
+.profileHead {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 3vh;
 }
 
-.create{
+.create {
     font-size: medium !important;
     display: flex;
     justify-content: flex-start;
@@ -315,26 +320,138 @@ input:checked+.slider:before {
     cursor: pointer;
 }
 
-.create:hover{
+.create:hover {
     color: black;
 }
 
-.list{
+.list {
     list-style-type: none;
     text-align: left;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
     font-weight: 600;
 }
 
-.list li:hover{
+.list li:hover {
     cursor: pointer;
     color: black;
 }
 
-.branding{
+.branding {
     margin-top: 10vh;
 }
 
-.branding h2,p{
+.branding h2,
+p {
     text-align: left;
+}
+
+.brandworks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3vh;
+}
+
+.brands {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vh;
+}
+
+.worklist {
+    font-size: large;
+}
+
+.work {
+    margin-top: 10vh;
+}
+
+.notification {
+    margin-top: 10vh;
+    text-align: left;
+    background-color: #d3d3d354;
+    border-radius: 2vh;
+    padding: 2vh;
+}
+
+.notifyHead,
+.notifyBody {
+    padding-inline: 2vh;
+    display: flex;
+    align-items: center;
+}
+
+.sender :first-child {
+    margin-left: auto !important;
+}
+
+.pricing {
+    margin-top: 10vh;
+}
+
+.pricing p {
+    margin: 0;
+    font-size: xx-large;
+}
+
+.pricingcards {
+    margin-top: 5vh;
+    width: 100%;
+    border: 1px darkgray solid;
+    border-radius: 2vh;
+    padding: 3vh;
+}
+
+.pcheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.subscribe {
+    background-color: black;
+    color: white;
+    border-radius: 1vh;
+    padding: 2vh;
+    border: none;
+    cursor: pointer;
+}
+
+.chatbtn{
+    border: none;
+    padding: 2vh;
+    border-radius: 1vh;
+    cursor: pointer;
+
+}
+
+.chatbtn:hover{
+    background-color: #ccc;
+}
+
+.workflow{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    gap: 10vh;
+    margin-top: 8vh;
+}
+
+.workflow .anticon{
+    padding: 2vh;
+    border-radius: 50%;
+    border: 1px gray solid;
+}
+
+.workflow p{
+    font-size: larger;
+}
+
+.faq{
+    margin-top: 15vh;
+    text-align: left;
+}
+
+.faq h2{
+    margin: 0;
 }

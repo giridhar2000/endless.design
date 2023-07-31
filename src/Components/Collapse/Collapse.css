@@ -1,0 +1,23 @@
+.collapse{
+    border: 1px solid lightgray;;
+    border-radius: 2vh;
+    padding: 2vh;
+    height: fit-content;
+    cursor: pointer;
+    margin-block: 3vh;
+}
+
+.collapseHead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapseHead p{
+    font-size: medium;
+    font-weight: 700;
+}
+
+.collapseBody{
+    margin-top: 3vh;
+}
