@@ -1,0 +1,9 @@
+.chatBody{
+    background-color: #cdcdcd6b;
+    color: slategray;
+    text-align: left;
+    padding: 9px;
+    width: fit-content;
+    margin: 1vh;
+    padding-inline: 3vh;
+}
