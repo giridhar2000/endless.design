@@ -128,8 +128,8 @@ export default function Home() {
                     <span>now</span>
                 </div>
             </div>
-
-            <div className='worksmain'>
+        
+            {/* <div className='worksmain'>
                 <span>Some of our work.</span>
                 <div className='works'>
                     <div className='works left'>
@@ -142,10 +142,9 @@ export default function Home() {
                         <div className='caldiv'>
                             <span style={{ fontSize: "x-large" }}>5 Day streak</span>
                             <span><p>10,482</p>&nbsp; kcal</span>
-                            {/* <span></span> */}
                             <span style={{ color: "rgba(255, 255, 255, 0.72)" }}>keep it up, you're 2 days away from a 7 day streak!</span>
                         </div>
-                        {/* <div className='friendreq'>
+                        <div className='friendreq'>
                             <img src={avatar} alt='avatar' className='avatar' />
                             <span style={{ fontSize: "x-large", marginTop: "3vh" }}>Sarah Tonken</span>
                             <p>New York, NY</p>
@@ -160,7 +159,7 @@ export default function Home() {
                                 <div style={{ color: "darkgray" }}>24 friends in common</div>
                             </div>
 
-                        </div> */}
+                        </div>
                     </div>
                     <div className='works center'>
                         <div className='card'>
@@ -255,7 +254,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className='homeContent'>
                 <div className='chat'>
                     <ChatBubble message={ChatMessages3} />

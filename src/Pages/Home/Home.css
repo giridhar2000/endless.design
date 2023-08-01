@@ -396,7 +396,7 @@ p {
 
 .pricingcards {
     margin-top: 5vh;
-    width: 100%;
+    width: auto;
     border: 1px darkgray solid;
     border-radius: 2vh;
     padding: 3vh;
@@ -454,4 +454,18 @@ p {
 
 .faq h2{
     margin: 0;
+}
+
+@media (max-width: 767px) {
+    .homePage{
+        padding: 2vh;
+    }
+
+    .intro, .homeContent {
+        width: auto;
+    }
+
+    .chatBody {
+        padding-inline: 2vh;
+    }
 }
