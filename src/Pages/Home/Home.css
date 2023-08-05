@@ -129,24 +129,9 @@ input:checked+.slider:before {
 
 .works {
     margin-top: 5vh;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: fit-content;
+    width: 100%;
 }
 
-.works .left {
-    float: left;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 2vh;
-    margin-top: 20vh;
-}
-
-.works .right {
-    float: right;
-}
 
 .card {
     border: 1px lightgray solid;
@@ -467,7 +452,8 @@ p {
     height: 100vh;
 } */
 
-.footerimg img{
+.footer img{
+    margin-bottom: -1vh;
     width: 100%;
     mask-image: linear-gradient(to bottom, transparent 2%, #0f0f0f 80%);
 }
@@ -475,6 +461,15 @@ p {
 .worksbody{
     display: flex;
     justify-content: space-between;
+}
+
+.googleeyes{
+    width: 100%;
+    height: 100%;
+}
+.googleeyes svg{
+    width:80%;
+    height:80%;
 }
 
 .animate p{

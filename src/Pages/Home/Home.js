@@ -1,16 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Logo from "../../Assets/img/logo.png"
 import ChatBubble from '../../Components/ChatBubble/ChatBubble'
 import "../Home/Home.css"
 import propic from "../../Assets/img/propic1.png"
-import brandmoustache from "../../Assets/img/brandmoustache.png"
 import bg from "../../Assets/img/bg.png"
 import S from "../../Assets/img/s.png"
 import Slack from "../../Assets/img/Slack.png"
 import screenshot from "../../Assets/img/screenshot.png"
 import A from "../../Assets/img/a.png"
 import Joe from "../../Assets/img/joe.png"
-
+import { gsap } from 'gsap';
 import {
     DesktopOutlined,
     MobileOutlined,
@@ -27,8 +26,58 @@ import {
 } from '@ant-design/icons';
 import { Divider } from 'antd';
 import Collapse from '../../Components/Collapse/Collapse'
+import HCarousal from '../../Components/HCarousal/HCarousal'
 
 export default function Home() {
+
+    useEffect(() => {
+        animator();
+    })
+
+    function animator() {
+        document.querySelectorAll('.codedText').forEach((t) => {
+            const arr1 = t.innerHTML.split('')
+            const arr2 = []
+            arr1.forEach((char, i) => arr2[i] = randChar()) //fill arr2 with random characters
+            t.onpointerover = () => {
+                const tl = gsap.timeline()
+                let step = 0
+                tl.fromTo(t, {
+                    innerHTML: arr2.join(''),
+                    color: '#000',
+                    background: '#bada55'
+                }, {
+                    duration: arr1.length / 20, //duration based on text length
+                    ease: 'power4.in',
+                    delay: 0.1,
+                    color: '#fff',
+                    background: '#000',
+                    onUpdate: () => {
+                        const p = Math.floor(tl.progress() * (arr1.length)) //whole number from 0 - text length
+                        if (step !== p) { //throttle the change of random characters
+                            step = p
+                            arr1.forEach((char, i) => arr2[i] = randChar())
+                            let pt1 = arr1.join('').substring(p, 0),
+                                pt2 = arr2.join('').substring(arr2.length - p, 0)
+                            if (t.classList.contains('fromRight')) {
+                                pt1 = arr2.join('').substring(arr2.length - p, 0)
+                                pt2 = arr1.join('').substring(arr1.length - p)
+                            }
+                            t.innerHTML = pt1 + pt2
+                        }
+
+                    }
+                })
+            }
+        })
+    }
+
+    function randChar() {
+        let c = "abcdefghijklmnopqrstuvwxyz1234567890!@#$^&*()…æ_+-=;[]/~`"
+        c = c[Math.floor(Math.random() * c.length)]
+        return (Math.random() > 0.5) ? c : c.toUpperCase()
+    }
+
     const ChatMessages1 = [
         "Hey, Vignesh here, founder of The Madras Branding Company.",
         "So what's The Madras Branding Company? Good question.",
@@ -129,133 +178,14 @@ export default function Home() {
                         <span>now</span>
                     </div>
                 </div>
-
-                {/* <div className='worksmain'>
-                <span>Some of our work.</span>
                 <div className='works'>
-                    <div className='works left'>
-                        <div>
-                            <label class="switch">
-                                <input type="checkbox" />
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                        <div className='caldiv'>
-                            <span style={{ fontSize: "x-large" }}>5 Day streak</span>
-                            <span><p>10,482</p>&nbsp; kcal</span>
-                            <span style={{ color: "rgba(255, 255, 255, 0.72)" }}>keep it up, you're 2 days away from a 7 day streak!</span>
-                        </div>
-                        <div className='friendreq'>
-                            <img src={avatar} alt='avatar' className='avatar' />
-                            <span style={{ fontSize: "x-large", marginTop: "3vh" }}>Sarah Tonken</span>
-                            <p>New York, NY</p>
-                            <br />
-                            <button className='addfriend'>Add friend</button>
-                            <div className='avatargroup'>
-                                <Avatar.Group maxCount={2}>
-                                    <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1" />
-                                    <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=3" />
-                                    <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=2" />
-                                </Avatar.Group>
-                                <div style={{ color: "darkgray" }}>24 friends in common</div>
-                            </div>
-
-                        </div>
+                    <div className='worksheader'>
+                        <h1 style={{ color: "#000000bf" }}>Some of our works.</h1>
                     </div>
-                    <div className='works center'>
-                        <div className='card'>
-                            <div className='cardHeader'>
-                                <span>Search or invite</span>
-                            </div>
-                            <Divider />
-                            <div className='cardBody'>
-                                <div className='invite'>
-                                    <span>Invited</span>
-                                </div>
-                                <div className='profile'>
-                                    <div className='profileHead'>
-                                        <img src={Thomas} alt='thomas pic' />
-                                        <div className='profileName'>
-                                            <span>Thomas Merrick</span>
-                                            <p style={{ color: "rgba(0,0,0,0.5)" }}>Invited 2 hours ago</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <ReloadOutlined />
-                                    </div>
-                                </div>
 
-                                <div className='profile'>
-                                    <div className='profileHead'>
-                                        <img src={Mary} alt='Mary pic' />
-                                        <div className='profileName'>
-                                            <span>Mary Smith</span>
-                                            <p style={{ color: "rgba(0,0,0,0.5)" }}>Invited 2 hours ago</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <ReloadOutlined />
-                                    </div>
-                                </div>
 
-                                <div className='invite'>
-                                    <span>Favourites</span>
-                                </div>
-                                <div className='profile'>
-                                    <div className='profileHead'>
-                                        <img src={jacob} alt='jacob pic' />
-                                        <div className='profileName'>
-                                            <span>Jacob Tyrell</span>
-                                            <p style={{ color: "rgba(0,0,0,0.5)" }}>jct@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='profile'>
-                                    <div className='profileHead'>
-                                        <img src={martin} alt='martin pic' />
-                                        <div className='profileName'>
-                                            <span>Martin Jenkins</span>
-                                            <p style={{ color: "rgba(0,0,0,0.5)" }}>m@mart.in</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='works right'>
-                        <div className='card'>
-                            <div className='cardHeader'>
-                                <div className='profileHead'>
-                                    <img src={Mary} alt='martin pic' style={{ width: "15%" }} />
-                                    <div className='profileName'>
-                                        <span style={{ fontWeight: "600", color: "black" }}>Mia Simpson</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <Divider />
-                            <div className='invite'>
-                                <span>Teams</span>
-                            </div>
-                            <div className='teams'>
-                                <div className='profileHead'>
-                                    <img src={martin} alt='martin pic' />
-                                    <div className='profileName'>
-                                        <span>Acme</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <span className='create'>Create a new team</span>
-                            <Divider />
-                            <ul className='list'>
-                                <li><p>Analytics</p></li>
-                                <li><p>Settings</p></li>
-                                <li><p>Sign out</p></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
-            </div> */}
+                <HCarousal />
                 <div className='homeContent'>
                     <div className='chat'>
                         <ChatBubble message={ChatMessages3} />
@@ -274,27 +204,6 @@ export default function Home() {
                     <div className='propicdiv'>
                         <img src={propic} alt="logo" className='propic' />
                         <span>now</span>
-                    </div>
-
-                    <div className='works'>
-                        <div className='worksheader'>
-                            <h1 style={{ color: "darkslategray" }}>Some of our works.</h1>
-                        </div>
-
-                        <div className='worksbody'>
-                            <div className='worksitem'>
-                                <img src={brandmoustache} alt='brandmoutache img' /><br />
-                                <span className='caption'>Brand Moustache</span>
-                            </div>
-                            <div className='worksitem'>
-                                <img src={brandmoustache} alt='brandmoutache img' /><br />
-                                <span className='caption'>Brand Moustache</span>
-                            </div>
-                            <div className='worksitem'>
-                                <img src={brandmoustache} alt='brandmoutache img' /><br />
-                                <span className='caption'>Brand Moustache</span>
-                            </div>
-                        </div>
                     </div>
 
                     <div className='branding'>
@@ -432,7 +341,7 @@ export default function Home() {
                             </div>
 
                             <div style={{ marginTop: "4vh", display: "flex", gap: "3vh" }}>
-                                <button className='subscribe'>Subscribe</button>
+                                <button className='codedText subscribe'>Subscribe</button>
                                 <button className='chatbtn'><MessageOutlined /> Chat</button>
 
                             </div>
@@ -450,7 +359,7 @@ export default function Home() {
                             </div>
 
                             <div style={{ marginTop: "4vh", display: "flex", gap: "3vh" }}>
-                                <button className='subscribe'>Subscribe</button>
+                                <button className='codedText subscribe'>Subscribe</button>
                                 <button className='chatbtn'><MessageOutlined /> Chat</button>
 
                             </div>
@@ -563,11 +472,9 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            
+
             <div className='footer'>
-                <div className='footerimg'>
-                    <img src={bg} alt='footerimg' />
-                </div>
+                <img src={bg} alt='footerimg' />
             </div>
         </>
     )

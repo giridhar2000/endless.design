@@ -1,0 +1,24 @@
+.carousal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.carousal img {
+    width: 100%;
+    height: 50vh;
+}
+
+.carousalView {
+    width: 100vh;
+    height: calc(100vw);
+    overflow: scroll;
+    transform: rotate(-90deg);
+    transform-origin: center calc(50vh);
+  }
+  
+  *{
+    ::-webkit-scrollbar{
+        display: none;
+    }
+  }
