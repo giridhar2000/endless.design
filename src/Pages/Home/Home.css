@@ -455,7 +455,7 @@ p {
 .footer img{
     margin-bottom: -1vh;
     width: 100%;
-    mask-image: linear-gradient(to bottom, transparent 2%, #0f0f0f 80%);
+    /* mask-image: linear-gradient(to bottom, transparent 2%, #0f0f0f 80%); */
 }
 
 .worksbody{
