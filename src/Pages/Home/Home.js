@@ -3,12 +3,13 @@ import Logo from "../../Assets/img/logo.png"
 import ChatBubble from '../../Components/ChatBubble/ChatBubble'
 import "../Home/Home.css"
 import propic from "../../Assets/img/propic1.png"
-import bg from "../../Assets/img/bg.png"
+// import bg from "../../Assets/img/bg.png"
 import S from "../../Assets/img/s.png"
 import Slack from "../../Assets/img/Slack.png"
 import screenshot from "../../Assets/img/screenshot.png"
 import A from "../../Assets/img/a.png"
 import Joe from "../../Assets/img/joe.png"
+import Footer from "../../Assets/img/Footer.jpg"
 import { gsap } from 'gsap';
 import {
     DesktopOutlined,
@@ -474,7 +475,7 @@ export default function Home() {
             </div>
 
             <div className='footer'>
-                <img src={bg} alt='footerimg' />
+                <img src={Footer} alt='footerimg' />
             </div>
         </>
     )
