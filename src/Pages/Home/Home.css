@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+
+.homePage h1,
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
 .intro,
 .homeContent {
     display: flex;
@@ -10,6 +18,16 @@
 
 .introText {
     margin-block: 8vh 2vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.introText>span {
+    font-family: 'Roboto', sans-serif;
+}
+
+.introText .Typewriter .Typewriter__wrapper {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
 
 .introText p {
@@ -19,6 +37,7 @@
     font-weight: 600;
     letter-spacing: -1px;
     line-height: 8vh;
+    font-family: 'Roboto', sans-serif;
 }
 
 .chat {
@@ -32,7 +51,7 @@
     border-bottom-left-radius: 1vh !important;
 }
 
-.sender .chatBody{
+.sender .chatBody {
     border-top-left-radius: 2vh;
     border-bottom-left-radius: 2vh;
     border-top-right-radius: 1vh !important;
@@ -396,9 +415,10 @@ p {
     margin-top: 10vh;
 }
 
-.pricing p {
+.pricing>p {
     margin: 0;
     font-size: xx-large;
+    font-family: 'Roboto', sans-serif;
 }
 
 .pricingcards {
@@ -424,7 +444,7 @@ p {
     cursor: pointer;
 }
 
-.chatbtn{
+.chatbtn {
     border: none;
     padding: 2vh;
     border-radius: 1vh;
@@ -432,11 +452,11 @@ p {
 
 }
 
-.chatbtn:hover{
+.chatbtn:hover {
     background-color: #ccc;
 }
 
-.workflow{
+.workflow {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: left;
@@ -444,26 +464,27 @@ p {
     margin-top: 8vh;
 }
 
-.workflow .anticon{
+.workflow .anticon {
     padding: 2vh;
     border-radius: 50%;
     border: 1px gray solid;
 }
 
-.workflow p{
+.workflow p {
     font-size: larger;
 }
 
-.faq{
+.faq {
     margin-top: 15vh;
     text-align: left;
 }
 
-.faq h2{
+
+.faq h2 {
     margin: 0;
 }
 
-.worksitem img{
+.worksitem img {
     width: 50%;
 }
 
@@ -471,69 +492,72 @@ p {
     height: 100vh;
 } */
 
-.footer img{
+.footer img {
     margin-bottom: -1vh;
     width: 100%;
     /* mask-image: linear-gradient(to bottom, transparent 2%, #0f0f0f 80%); */
 }
 
-.worksbody{
+.worksbody {
     display: flex;
     justify-content: space-between;
 }
 
-.googleeyes{
+.googleeyes {
     width: 100%;
     height: 100%;
 }
-.googleeyes svg{
-    width:80%;
-    height:80%;
+
+.googleeyes svg {
+    width: 80%;
+    height: 80%;
 }
 
-.animate p{
+.animate p {
     text-align: left;
     max-width: 40ch;
     transform: scale(0.94);
     animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-  }
-  @keyframes scale {
+}
+
+@keyframes scale {
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
-  
-  .animate span {
+}
+
+.animate span {
     display: inline-block;
     opacity: 0;
     filter: blur(4px);
-  }
-  
-  .animate span:nth-child(1) {
+}
+
+.animate span:nth-child(1) {
     animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
-  }
-  
-  .animate span:nth-child(2) {
+}
+
+.animate span:nth-child(2) {
     animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
-  }
-  
-  .animate span:nth-child(3) {
+}
+
+.animate span:nth-child(3) {
     animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
-  }
-  
-  @keyframes fade-in {
+}
+
+@keyframes fade-in {
     100% {
-      opacity: 1;
-      filter: blur(0);
+        opacity: 1;
+        filter: blur(0);
     }
-  }
+}
 
 @media (max-width: 767px) {
-    .homePage{
+    .homePage {
         padding: 2vh;
     }
 
-    .intro, .homeContent {
+    .intro,
+    .homeContent {
         width: auto;
     }
 
