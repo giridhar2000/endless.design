@@ -43,8 +43,16 @@
     border-top-left-radius: 2vh !important;
 }
 
+.chat .chatBody:last-child {
+    border-bottom-left-radius: 2vh !important;
+}
+
 .sender :first-child {
     border-top-right-radius: 2vh !important;
+}
+
+.sender :last-child {
+    border-bottom-right-radius: 2vh !important;
 }
 
 .propic {
