@@ -26,6 +26,7 @@ import {
     WechatOutlined
 } from '@ant-design/icons';
 import { Divider } from 'antd';
+import Typewriter from "typewriter-effect";
 import Collapse from '../../Components/Collapse/Collapse'
 import HCarousal from '../../Components/HCarousal/HCarousal'
 
@@ -143,12 +144,25 @@ export default function Home() {
                     <img src={Logo} alt="logo" style={{ width: "12%" }} />
 
                     <div className='introText animate'>
-                        <p>
+                        {/* <p>
                             One subscription.<br />
                             way too many
                             <span style={{ color: "black" }}>
                                 design requests.
                             </span>
+                        </p> */}
+                        <p>
+                            <span style={{ color: "black" }}>
+                                TMBC makes
+                            </span>
+                            <Typewriter
+                                options={{
+                                strings: ["Designs", "Brands", "Videos", "Photos", "Ideas"],
+                                autoStart: true,
+                                loop: true,
+                                deleteSpeed: 50
+                                }}
+                            />
                         </p>
                     </div>
 
