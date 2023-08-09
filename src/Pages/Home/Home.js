@@ -295,7 +295,7 @@ export default function Home() {
                             <span>2d ago</span>
                         </div>
 
-                        <div className='chat sender' style={{ marginTop: "10vh" }}>
+                        <div className='sender' style={{ marginTop: "10vh" }}>
                             <ChatBubble message={["Can you design us a feed for our app?"]} />
                         </div>
 
@@ -322,7 +322,7 @@ export default function Home() {
                             <span>1m ago</span>
                         </div>
 
-                        <div className='chat sender' style={{ marginTop: "10vh" }}>
+                        <div className='sender' style={{ marginTop: "10vh" }}>
                             <ChatBubble message={["Perfect! Ready for the next request?"]} />
                         </div>
 
@@ -412,7 +412,7 @@ export default function Home() {
                             <span>now</span>
                         </div>
 
-                        <div className='chat sender' style={{ marginTop: "10vh" }}>
+                        <div className='sender' style={{ marginTop: "10vh" }}>
                             <ChatBubble message={ChatMessages5} />
                         </div>
 

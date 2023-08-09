@@ -32,8 +32,19 @@
     border-bottom-left-radius: 1vh !important;
 }
 
+.sender .chatBody{
+    border-top-left-radius: 2vh;
+    border-bottom-left-radius: 2vh;
+    border-top-right-radius: 1vh !important;
+    border-bottom-right-radius: 1vh !important;
+}
+
 .chat .chatBody:first-child {
     border-top-left-radius: 2vh !important;
+}
+
+.sender :first-child {
+    border-top-right-radius: 2vh !important;
 }
 
 .propic {
