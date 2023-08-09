@@ -6,9 +6,32 @@
     width: fit-content;
     margin: 1vh;
     padding-inline: 3vh;
-    animation: fadeInUp;
+    /* animation: fadeInUp; */
 
 }
+
+.lineup {
+  animation: 2s anim-lineUp ease-in-out;
+}
+
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 
 @keyframes message {
     0% {
@@ -26,7 +49,7 @@
   }
 
 
-  @keyframes fadeInUp {
+  /* @keyframes fadeInUp {
     0% {
       opacity: 0;
       transform: translateY(20px);
@@ -35,4 +58,4 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
+  } */
