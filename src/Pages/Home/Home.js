@@ -9,7 +9,8 @@ import Slack from "../../Assets/img/Slack.png"
 import screenshot from "../../Assets/img/screenshot.png"
 import A from "../../Assets/img/a.png"
 import Joe from "../../Assets/img/joe.png"
-import Footer from "../../Assets/img/Footer.jpg"
+import Footer from "../../Assets/img/Footer.svg"
+import ScrollToTop from 'react-scroll-up'
 import { gsap } from 'gsap';
 import {
     DesktopOutlined,
@@ -23,7 +24,12 @@ import {
     SlackOutlined,
     OneToOneOutlined,
     HistoryOutlined,
-    WechatOutlined
+    WechatOutlined,
+    UpOutlined,
+    FacebookOutlined,
+    InstagramOutlined,
+    LinkedinOutlined,
+    TwitterOutlined
 } from '@ant-design/icons';
 import { Divider } from 'antd';
 import Typewriter from "typewriter-effect";
@@ -142,7 +148,9 @@ export default function Home() {
             <div className='homePage'>
                 <div className='intro'>
                     <img src={Logo} alt="logo" style={{ width: "12%" }} />
-
+                    <ScrollToTop showUnder={160}>
+                        <UpOutlined />
+                    </ScrollToTop>
                     <div className='introText animate'>
                         {/* <p>
                             One subscription.<br />
@@ -482,15 +490,37 @@ export default function Home() {
                                 <span>now</span>
                             </div>
                         </div>
-
-                        <h3 style={{ textAlign: "left", marginTop: "10vh", color: "darkgray" }}>© 2023 TMBC</h3>
                     </div>
                 </div>
             </div>
 
-            <div className='footer'>
-                <img src={Footer} alt='footerimg' />
-            </div>
+            <footer className='footer'>
+                {/* <img src={Footer} alt='footerimg' /> */}
+                    <div className='waves'>
+                        <div className='wave' id='wave1'></div>
+                        <div className='wave' id='wave2'></div>
+                        <div className='wave' id='wave3'></div>
+                        <div className='wave' id='wave4'></div>
+                    </div>
+                    <div className='social-icons'>
+                    {/* <h4>follow us</h4> */}
+  	 			    <ul>
+                        <li><a href="#"><FacebookOutlined/></a></li>
+                        <li><a href="#"><InstagramOutlined/></a></li>
+                        <li><a href="#"><LinkedinOutlined/></a></li>
+                        <li><a href="#"><TwitterOutlined/></a></li>
+  	 			    </ul>
+                    <ul className='menu'>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Teams</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                    <p>©2023 TMBC | All Rights Reserved.</p>
+                    {/* <h3 style={{ textAlign: "left", marginTop: "10vh", color: "darkgray" }}>© 2023 TMBC</h3> */}
+                </div>
+            </footer>
         </>
     )
 }
