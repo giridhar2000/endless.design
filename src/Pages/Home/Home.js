@@ -9,7 +9,6 @@ import Slack from "../../Assets/img/Slack.png"
 import screenshot from "../../Assets/img/screenshot.png"
 import A from "../../Assets/img/a.png"
 import Joe from "../../Assets/img/joe.png"
-import Footer from "../../Assets/img/Footer.svg"
 import ScrollToTop from 'react-scroll-up'
 import { gsap } from 'gsap';
 import {
